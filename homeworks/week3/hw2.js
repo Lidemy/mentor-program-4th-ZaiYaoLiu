@@ -1,44 +1,45 @@
-var readline = require('readline');
+const readline = require('readline');
 
-var lines = []
-var rl = readline.createInterface({
-  input: process.stdin
+const lines = [];
+const rl = readline.createInterface({
+  input: process.stdin,
 });
 
-rl.on('line', function (line) {
-  lines.push(line)
+rl.on('line', (line) => {
+  lines.push(line);
 });
 
-rl.on('close', function() {
-  solve(lines)
-})
-
-function solve(lines) {
-	var temp = lines[0].split(" ")
-	var a = Number(temp[0])
-	var b = Number(temp[1])
-	for(var i = a ; i <= b ; i++){
-		var digits = Digits(i)
-		var sum = Sum(digits)
-		if(sum === i){
-			console.log(i)
-		}
-	}	
-}
-
-function Digits(x) {
-	var digits = []
-	while(x > 0){
-		digits.push(x % 10)
-		x = Math.floor(x / 10)
+function Digits(n) {
+	let x = n;
+	const digits = [];
+	while (x > 0) {
+		digits.push(x % 10);
+		x = Math.floor(x / 10);
 	}
-	return digits
+	return digits;
 }
 
 function Sum(arr) {
-	var sum = 0
-	arr.forEach(function (x) {
-		sum += x**arr.length
-	})
-	return sum
+	let all = 0;
+	arr.forEach((x) => {
+		all += x ** arr.length;
+	});
+	return all;
 }
+
+function solve(input) {
+	const temp = input[0].split(' ');
+	const a = Number(temp[0]);
+	const b = Number(temp[1]);
+	for (let i = a; i <= b; i += 1) {
+		const digits = Digits(i);
+		const sum = Sum(digits);
+		if (sum === i) {
+			console.log(i);
+		}
+	}
+}
+
+rl.on('close', () => {
+  solve(lines);
+});
