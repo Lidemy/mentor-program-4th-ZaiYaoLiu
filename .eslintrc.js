@@ -5,10 +5,12 @@ module.exports = {
     node: true,
     jest: true
   },
+  "parser": "babel-eslint",
   extends: 'airbnb',
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
+    'BigInt':true,
   },
   parserOptions: {
     ecmaFeatures: {
@@ -20,6 +22,9 @@ module.exports = {
     'react',
   ],
   rules: {
-    "no-console": "off"
+    'no-console': 'off',
+    'no-tabs':'off',
+    'linebreak-style': ["off", "windows"],
+    "indent": ["off", 2],
   },
 };
