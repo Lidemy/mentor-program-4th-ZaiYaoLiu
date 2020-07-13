@@ -26,5 +26,6 @@ module.exports = {
     'no-tabs':'off',
     'linebreak-style': ["off", "windows"],
     "indent": ["off", 2],
+    "quote-props": "off",
   },
 };
