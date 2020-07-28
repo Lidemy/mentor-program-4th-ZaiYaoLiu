@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>報名網站</title>
+</head>
+
+<style type="text/css">
+	body {
+		background-color: gray;
+		font-family: 'Microsoft-JhengHei', '微軟正黑體';
+	}
+
+	.main {
+		overflow: auto;
+		background-color: #fff;
+		margin: 10% auto;
+		border: 1px solid black;
+		max-width: 650px;
+		box-shadow: 1.8px 2.4px 5px;
+	}
+
+	.top__color {
+		width: 100%;
+		height: 10px;
+		background-color: #fad312;
+	}
+
+	.info {
+		padding: 50px;
+	}
+
+	.info h1 {
+		font-size: 36px;
+		font-weight: 700px;
+	}
+
+	.info p {
+		font-size: 16px;
+	}
+
+	.info span {
+		color: red;
+	}
+
+	.info form {
+		margin-top: 50px;
+	}
+
+	.info label {
+		font-size: 20px;
+		line-height: 2;
+	}
+
+	.info input {
+		font-size: 14px;
+	}
+
+	.submit__btn {
+		margin-top: 50px;
+		background-color: #fad312;
+		height: 50px;
+		width: 100px;
+	}
+
+	footer {
+		background-color: #000;
+		color: #fff;
+		text-align: center;
+		line-height: 2;
+	}
+</style>
+<body>
+	<div class="windows">
+		<div class="main">
+			<div class="top__color"></div>
+			<div class="info">
+				<h1>新拖延運動報名表單</h1>
+				<p>活動日期：2020/12/10 ~ 2020/12/11</p>
+				<p>活動地點：台北市大安區新生南路二段1號</p>
+				<p><span>*必填</span></p>
+
+				<form action="">
+					<label for="name">暱稱 <span>*</span></label><br>
+					<input type="text" name="name" id="name" placeholder="您的回答"><br>
+					<p></p>
+					<label for="email">電子郵件 <span>*</span></label><br>
+					<input type="email" name="email" id="email" placeholder="您的電子郵件"><br>
+					<p></p>
+					<label for="cellphone">手機號碼 <span>*</span></label><br>
+					<input type="text" name="cellphone" id="cellphone" placeholder="您的手機號碼"><br>
+					<p></p>
+					<label for="species">報名類型 <span>*</span></label><br>
+					<input type="radio" name="species" id="species">躺在床上用想像力實作<br>
+					<input type="radio" name="species" id="species"> 趴在地上滑手機找現成的<br>
+					<p></p>
+					<label for="about">怎麼知道這個活動的？ <span>*</span></label><br>
+					<input type="text" name="about" id="about" placeholder="您的回答"><br>
+					<p></p>
+					<label for="other">其他</label><br>
+					<p>對活動的一些建議</p>
+					<input type="text" name="other" id="other" placeholder="您的回答"><br>
+
+					<input type="submit" name="submit" value="提交" class="submit__btn">
+				</form>
+				<p>請勿透過表單送出您的密碼。</p>
+			</div>
+		</div>
+	</div>
+	<footer>© 2020 © Copyright. All rights Reserved.</footer>
+</body>
+</html>

@@ -1,0 +1,246 @@
+.Restaurant-index {
+	width: 1920px;
+  height: 3127px;
+  background-color: #ffffff;
+  margin: 0 auto;
+}
+.nav {
+	position: relative;
+  width: 1920px;
+  height: 84px;
+  box-shadow: -1.4px -1.4px 6px 0 #97a2a0;
+  background-color: #ffffff;
+  justify-content: space-between;
+  border: 1px solid;
+}
+
+.Just-A-Bite {
+	position: absolute;
+	left: 96px;
+	top: 26px;
+  font-family: Questrial;
+  font-size: 36px;
+  color: #489846;
+}
+.pumpbox {
+	position: absolute;
+	left: 1310px;
+	top: 20px;
+  width: 120px;
+  height: 44px;
+  background-color: #ff7286;
+  border-radius: 8px;
+}
+.nav-word1 {
+	position: absolute;
+	left: 1335px;
+	top: 33px;
+	color: #fff;
+	font-family: Questrial;
+	font-size: 18px;
+}
+.nav-word2 {
+	position: absolute;
+	left: 1466px;
+	top: 34px;
+	font-family: Questrial;
+	font-size: 18px;
+}
+.nav-word3 {
+	position: absolute;
+	left: 1598px;
+	top: 33px;
+	font-family: Questrial;
+	font-size: 18px;
+}
+.nav-word4 {
+	position: absolute;
+	left: 1728px;
+	top: 34px;
+	font-family: Questrial;
+	font-size: 18px;
+}
+.title-bgi {
+	position: relative;
+	background-image: url("2.png");
+	width: 1920px;
+	height: 580px;
+}
+.title-bgi-1 {
+	z-index: 999;
+	background-color: rgba(0,0,0,0.4);
+	width: 1920px;
+	height: 580px;
+}
+.title-bgi-word {
+	position: absolute;
+	font-family: Questrial;
+	color: #fff;
+	font-size: 60px;
+	font-weight: bold;
+	top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.main {
+	position: relative;
+	margin: 50px 0;
+	height: 50px;
+}
+.main-title::before {
+	content: '';
+	position: absolute;
+	width: 15px;
+	height: 38px;
+	background-color: #a3dea2;
+	margin-left: -30px;
+}
+.main-title {
+	position: absolute;
+	font-family: MicrosoftJhengHei;
+	font-size: 36px;
+	font-weight: bold;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.main-word {
+	font-family: MicrosoftJhengHei;
+  font-size: 16px;
+  text-align: center;
+  line-height: 2;
+}
+.btn {
+	padding-top: 36px;
+	display: flex;
+	justify-content: center;
+}
+.order-btn {
+	position: relative;
+	width: 300px;
+	height: 160px;
+	background-color: #a8e8e1;
+	margin: 10px;
+  border-radius: 10px;
+}
+.order-btn a{
+	position: absolute;
+	display: block;
+	text-decoration: none;
+	color: #3e613d;
+  font-size: 36px;
+  font-weight: bold;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.search-btn {
+	position: relative;
+	width: 300px;
+	height: 160px;
+	background-color: #f9f9b5;
+	margin: 10px;
+  border-radius: 10px;
+}
+
+.search-btn a{
+	position: absolute;
+	display: block;
+	text-decoration: none;
+	color: #3e613d;
+  font-size: 36px;
+  font-weight: bold;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.menu {
+	display: flex;
+}
+
+.forum {
+	display: flex;
+	justify-content: center;
+}
+
+.visitors {
+	position: relative;
+	width: 550px;
+	height: 200px;
+	border: 1px solid #c7e5ec;
+	border-radius: 5px;
+	margin: 20px;
+}
+
+.visitors img {
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.visitors-info {
+	margin: 50px;
+	line-height: 1.8;
+	text-align: center;
+	justify-content: space-between;
+}
+
+.address {
+	margin: 0 auto;
+	height: 400px;
+	width: 90%;
+}
+
+.address iframe {
+	height: 100%;
+	width: 100%;
+}
+
+.restaurant-info {
+	position: relative;
+	margin-top: 40px;
+	background-color: #e8efee;
+	height: 250px;
+}
+
+.restaurant-Community {
+	width: 200px;
+	position: absolute;
+	right: 10%;
+	text-align: center;
+}
+
+.restaurant-Community h1 {
+	color: #489846;
+	font-family: Questrial;
+  font-size: 36px;
+}
+
+.restaurant-Community p {
+	margin-top: 50px;
+	font-family: Questrial;
+  font-size: 14px;
+}
+
+.restaurant-info p {
+	position: absolute;
+	font-family: MicrosoftJhengHei;
+  font-size: 14px;
+ 	line-height: 2;
+	top: 20%;
+	left: 5%;
+	/*transform: translate(-50%, -50%);*/
+}
+
+.restaurant-copyright {
+	margin: 0; 
+	background-color: #35564b;
+	color: white;
+	text-align: center;
+	line-height: 2;
+	font-family: MicrosoftJhengHei;
+  font-size: 16px;
+}
