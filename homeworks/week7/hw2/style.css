@@ -1,0 +1,131 @@
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	box-shadow: -1.4px -1.4px 6px 0 #97a2a0;
+	padding: 20px;	
+}
+
+.navbar__title {
+	font-family: Questrial;
+  font-size: 36px;
+  color: #489846;
+}
+
+.navber__menu a {
+	text-decoration: none; 
+	color: #000;
+	font-family: 新細明體;
+  font-size: 18px;
+  padding: 0 16px;  
+}
+
+.navber__menu .action, .navber__menu a:hover {
+	padding: 10px 16px;
+	background-color: #ff7286;
+	border-radius: 8px; 
+	color: #fff;	
+}
+
+.content {
+	text-align: center;
+	margin: 0 auto;
+	max-width: 650px;
+}
+
+.content__title {
+	display: inline-block;	
+	margin: 16px 0;
+	font-family: 新細明體;
+  font-size: 36px;
+  font-weight: bold;
+  border-left: 15px solid #a3dea2;
+  padding-left: 16px;
+}
+
+.content__info {
+	text-align: left;
+}
+
+.question__ans {
+	margin: 8px;
+	display: flex;
+  border-bottom: 2px solid #a3dea2;
+  cursor: help;
+}
+
+.question__ans h1 {
+	margin: 3px 0;
+	font-family: 新細明體;
+  font-size: 18px;
+}
+
+.question__ans span {
+	margin-right: 12px;
+	font-family: 新細明體;
+  font-size: 24px;
+  font-weight: bold;
+	color: #70b282;
+}
+
+.ans__hidden p {
+	height: 0px;
+	font-family: 新細明體;
+  font-size: 16px;
+  overflow: hidden;
+}
+
+.restaurants {
+	margin-top: 24px;
+	display: flex;
+	justify-content: space-between;
+	background: #e8efee;	
+	padding: 12px 24px;
+}
+
+.restaurants__info p {
+	font-family: 新細明體;
+  font-size: 14px;
+}
+
+.restaurants__community h1{
+	font-family: Questrial;
+  font-size: 36px;
+	text-align: center;
+	color: #489846;
+	font-weight: normal;
+}
+
+.restaurants__community a {
+	text-decoration: none;
+}
+
+.restaurants__Copyright {
+	background-color: #35564b;
+	padding: 12px;
+	font-family: 新細明體;
+  font-size: 16px;
+  text-align: center;
+  color: #fff;
+}
+
+@media (max-width: 650px) {
+	.navbar {
+		display: block;
+	}
+
+	.navbar__title {
+		text-align: center;
+	}
+
+	.navber__menu {
+		padding: 0;
+		justify-content: space-around;
+		display: flex;
+	}
+
+	.navber__menu a {
+		align-items: center;
+		padding: 10px 16px;  
+	}
+}

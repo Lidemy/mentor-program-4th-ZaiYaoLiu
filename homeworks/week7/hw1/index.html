@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" />
+
+	<style>
+		body {
+			background-color: rgba(0, 0, 0, 0.3);
+		}
+		
+		.content {
+			max-width: 	645px;
+			height: 1085px;
+			margin: 5% auto; 
+			background-color: #fff;
+		}
+
+		.content__top {
+			height: 1%;
+			background-color: #fad312;
+		}
+
+		.content__info {
+			padding: 5%; 
+		}
+		
+		h1 {
+			font-family: 新細明體;
+  		font-size: 36px;
+		}
+
+		p {
+			font-family: 新細明體;
+  		font-size: 14px;
+		}
+
+		span {
+			font-family: 新細明體;
+  		font-size: 16px;
+  		color: #e74149;
+		}
+
+		.content__title {
+			margin: 4% 0;
+			font-family: 新細明體;
+  		font-size: 20px;
+		}
+
+		.inportent .content__title::after {
+			content: ' * ';
+			color: #e74149
+		}
+
+		.submit__btn {
+			height: 40px;
+			width: 92px;
+			background-color: #fad312;
+			margin: 4% 0;
+			border: none;
+			border-radius: 3px;
+		}
+		.err__hidden .err__text{
+			visibility: hidden;
+		}
+
+		.err__text {
+			color: red;
+			margin: 1% 0; 
+		}
+	
+		footer {
+			background-color: #000;
+			color: #fff;
+			font-family: 新細明體;
+  		font-size: 13px;
+			text-align: center;
+			padding: 10px 0;
+		}
+	</style>
+</head>
+<body>
+	<div class="content">
+		<div class="content__top"></div>
+		<div class="content__info">
+			<h1>新拖延運動報名表單</h1>
+			<p>活動日期：2020/12/10 ~ 2020/12/11</p>
+			<p>活動地點：台北市大安區新生南路二段1號</p>
+			<span> * 必填</span>
+
+			<form>
+				<div class="inportent err__hidden">
+					<div class="content__title">暱稱</div>
+					<div><input type="text" name=""></div>
+					<div class="err__text">請輸入暱稱</div>
+				</div>
+
+				<div class="inportent err__hidden">
+					<div class="content__title">電子郵件</div>
+					<div><input type="text" name=""></div>
+					<div class="err__text">請輸入電子郵件</div>		
+				</div>
+
+				<div class="inportent err__hidden">
+					<div class="content__title">手機號碼</div>
+					<div><input type="text" name=""></div>
+					<div class="err__text">請輸入手機號碼</div>					
+				</div>
+
+				<div class="inportent err__hidden">
+					<div class="content__title">報名類型</div>
+					<p><input type="radio" name="radios" value="1">躺在床上用想像力實作</p>
+					<p><input type="radio" name="radios" value="2">趴在地上滑手機找現成的</p>
+					<div class="err__text">請輸入報名類型</div>					
+				</div>
+
+				<div class="inportent err__hidden">
+					<div class="content__title">怎麼知道這個活動的？</div>
+					<div><input type="text" name=""></div>
+					<div class="err__text">請輸入怎麼知道這個活動的？</div>					
+				</div>
+
+				<div>
+					<div class="content__title">其他</div>
+					<div><p>對活動的一些建議</p></div>
+					<div><input type="text" name=""></div>					
+				</div>
+
+				<input type="submit" class="submit__btn">
+				<p>請勿透過表單送出您的密碼。</p>
+			</form>
+		</div>
+		<div></div>
+	</div>
+	<footer>© 2020 © Copyright. All rights Reserved.</footer>
+
+	<script type="text/javascript">
+		document.querySelector('form').addEventListener('submit', function (e) {
+			e.preventDefault();
+			const elements = document.querySelectorAll(".inportent input[type=text]")
+			for (let element of elements) {				
+				if (!element.value) {
+					element.parentNode.parentNode.classList.remove("err__hidden")
+				} else {
+					element.parentNode.parentNode.classList.add("err__hidden")
+				}
+			}
+
+			const radios = document.querySelectorAll(".inportent input[type=radio]")
+			for (let radio of radios) {				
+				if (radios.length) {
+					let isValue = [...radios].some(radio => radio.checked)
+					if (!isValue) {
+						radio.parentNode.parentNode.classList.remove("err__hidden")
+					} else {
+						radio.parentNode.parentNode.classList.add("err__hidden")
+					}
+				}
+			}			
+		})
+	</script>
+</body>
+</html>
