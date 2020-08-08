@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Todo List</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" />
+
+  <style>
+  	.content {
+  		margin: 48px auto;
+  		max-width: 650px;
+  		background: yellow;
+  		text-align: center;
+  	}
+
+  	.content__title {
+			text-align: center;
+			padding: 12px 0;
+  	}
+
+  	.content__menu {  		
+  		margin: 24px 0;
+  	}
+		
+		.content__new:hover {
+			background-color: #ccc;
+		}
+
+  	.content__new {	
+  		margin: 24px 0;	
+  		display: flex;
+  		align-items: center;
+  		justify-content: space-between;
+  	}
+
+  	.content__new input {
+  		width: 24px;
+  		height: 24px;
+  	}
+
+  	.content__word {
+  		font-family: 標楷體;
+  		font-size: 24px;
+  		max-width: 500px;
+  		overflow: auto;
+  	}
+
+  	.content__finish {
+  		text-decoration: line-through; 
+  	}
+  </style>
+</head>
+<body>
+	<div class="content">
+		<h1 class="content__title">
+			Todo List
+		</h1>
+		<input class = "content__input" type="text" placeholder="輸入內容">
+		<input class="content__submit" type="submit" value="新增">
+
+		<div class="content__menu"></div>
+
+	</div>
+
+	<script type="text/javascript">
+		document.querySelector(".content__submit").addEventListener("click", 
+			function (e) {
+				const value = document.querySelector(".content__input").value;
+				const div = document.createElement("div");
+				if (!value) {
+					return
+				} else {
+					div.classList.add("content__new");
+					div.innerHTML = `
+						<input class="content__checkbox" type="checkbox">
+						<div class="content__word">${escapeHtml(value)}</div>
+						<button class="content__delete">刪除</button>			
+					`;
+					document.querySelector('.content__menu').appendChild(div);
+					document.querySelector('.content__input').value = ''
+				}
+			}
+		)
+
+		document.querySelector(".content__menu").addEventListener("click",
+			function (e) {
+				if (e.target.classList.contains("content__delete")) {
+					e.target.parentNode.remove()
+				}
+
+				if (e.target.classList.contains('content__checkbox')) {
+	        if (e.target.checked) {
+	          e.target.parentNode.classList.add('content__finish')
+	        } else {
+	          e.target.parentNode.classList.remove('content__finish')
+	        }
+	      }
+			}
+		)
+
+
+
+		function escapeHtml(unsafe) {
+      return unsafe
+           .replace(/&/g, "&amp;")
+           .replace(/</g, "&lt;")
+           .replace(/>/g, "&gt;")
+           .replace(/"/g, "&quot;")
+           .replace(/'/g, "&#039;");
+  	}
+			
+		
+	</script>
+</body>
+</html>
