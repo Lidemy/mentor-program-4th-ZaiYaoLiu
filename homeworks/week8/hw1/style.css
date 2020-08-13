@@ -1,0 +1,167 @@
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	box-shadow: -1.4px -1.4px 6px 0 #97a2a0;
+	padding: 20px;	
+}
+
+.navbar__title {
+	font-family: Questrial;
+  font-size: 36px;
+  color: #489846;
+}
+
+.navber__menu a {
+	text-decoration: none; 
+	color: #000;
+	font-family: 新細明體;
+  font-size: 18px;
+  padding: 0 16px;  
+}
+
+.navber__menu .action, .navber__menu a:hover {
+	padding: 10px 16px;
+	background-color: #ff7286;
+	border-radius: 8px; 
+	color: #fff;	
+}
+
+.main {
+	position: relative;
+	height: 800px;
+	background-image: url(games-bn.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	text-align: center;
+}
+
+.main__content {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	margin: 0 auto;
+	background-color: #fff;
+	border-radius: 8px;	
+	font-size: 16px;
+}
+
+.main__title {
+	margin: 12px 0;
+	font-family: 新細明體;
+  font-size: 24px;
+  font-weight: bold;
+  color: #5ec1b6;
+  text-align: center;
+}
+
+.main__info {
+	margin: 12px 24px;
+	display: flex;
+	font-family: 新細明體;
+  text-align: left;
+}
+
+.main__info_title {
+	font-weight: bold;
+	margin-right: 12px ;
+}
+
+.main__btn {
+	text-align: center;
+}
+
+.main__submit {
+	margin: 3%;
+	background: #e62a45;
+	color: #fff;
+	border: none;
+	height: 60px;
+	width: 300px;
+	border-radius: 8px;
+}
+
+.result__text {
+	padding: 12px; 
+	text-align: center;
+	font-size: 48px;
+	font-weight: bold;
+}
+
+.result__submit {
+	margin: 3%;
+	background: #e62a45;
+	color: #fff; 
+	height: 30px;
+	width: 60px;
+	border-radius: 8px;
+}
+
+.restaurants {
+	display: flex;
+	justify-content: space-between;
+	background: #e8efee;	
+	padding: 12px 24px;
+}
+
+.restaurants__info p {
+	font-family: 新細明體;
+  font-size: 14px;
+}
+
+.restaurants__community h1{
+	font-family: Questrial;
+  font-size: 36px;
+	text-align: center;
+	color: #489846;
+	font-weight: normal;
+}
+
+.restaurants__community a {
+	text-decoration: none;
+}
+
+.restaurants__Copyright {
+	background-color: #35564b;
+	padding: 12px;
+	font-family: 新細明體;
+  font-size: 16px;
+  text-align: center;
+  color: #fff;
+}
+
+@media (max-width: 650px) {
+	.navbar {
+		display: block;
+	}
+
+	.navbar__title {
+		text-align: center;
+	}
+
+	.navber__menu {
+		padding: 0;
+		justify-content: space-around;
+		display: flex;
+	}
+
+	.navber__menu a {
+		align-items: center;
+		padding: 10px 16px;  
+	}
+
+	.main__info {
+		display: block;
+	}
+
+	.main__submit {
+	margin: 3%;
+	background: #e62a45;
+	color: #fff;
+	border: none;
+	height: 30px;
+	width: 100px;
+	border-radius: 8px;
+}
+}
