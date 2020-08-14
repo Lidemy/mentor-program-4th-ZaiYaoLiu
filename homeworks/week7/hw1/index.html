@@ -111,8 +111,8 @@
 
 				<div class="inportent err__hidden">
 					<div class="content__title">報名類型</div>
-					<p><input type="radio" name="radios" value="1">躺在床上用想像力實作</p>
-					<p><input type="radio" name="radios" value="2">趴在地上滑手機找現成的</p>
+						<p><input type="radio" name="radios" >躺在床上用想像力實作</p>
+						<p><input type="radio" name="radios" >趴在地上滑手機找現成的</p>
 					<div class="err__text">請輸入報名類型</div>					
 				</div>
 
@@ -151,7 +151,9 @@
 			const radios = document.querySelectorAll(".inportent input[type=radio]")
 			for (let radio of radios) {				
 				if (radios.length) {
-					let isValue = [...radios].some(radio => radio.checked)
+					let isValue = [...radios].some(function (radio) {
+						radio.checked;
+					})
 					if (!isValue) {
 						radio.parentNode.parentNode.classList.remove("err__hidden")
 					} else {

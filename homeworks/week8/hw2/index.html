@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" />
+
+  <style type="text/css">
+  	.navbar {
+  		display: flex;
+  		justify-content: space-around;
+			background-color: #000;
+			padding: 8px 0; 
+  	}
+
+  	.navbar__title {
+  		padding: 12px;
+  		border: 1px solid;
+  		border-radius: 2px;
+
+  	}
+
+  	.stream {
+  		justify-content: space-around;
+  		display: inline-flex;
+  		flex-wrap: wrap;
+  	}
+
+  	.stream__content {
+  		border: 1px solid;
+  		margin: 8px;
+  		cursor: pointer;
+  	}
+
+  	.stream__content:hover {
+  		
+  	}
+
+  	.stream__info {
+  		display: flex;
+  		padding: 8px;
+  		font-size: 24px;
+  		justify-content: space-around;
+  		align-items: center;
+  	}
+
+  	.stream__img {
+  		width: 400px;
+  		height: 300px;
+  		margin: 8px;
+  	}
+
+  	.stream__logo {
+  		width: 50px;
+  		height: 50px;
+  	}
+
+  </style>
+</head>
+<body>
+	<div class="navbar">
+
+	</div>
+	<div class="main">
+		<div class="stream">
+			
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		const url = `https://api.twitch.tv/kraken/`;
+		const accept = `application/vnd.twitchtv.v5+json`;
+		const clientId = `0dhlqk9cir8w6pdvh8opafwc691ufr`;
+
+
+		const request = new XMLHttpRequest();
+		request.addEventListener("load", function (e) {
+
+			if (request.status >= 200 && request.status < 400) {
+				var data = JSON.parse(request.response);
+				const names = data.top.map(games => games.game.name)
+
+				document.querySelector(".navbar").innerHTML = `
+					<button class="navbar__title">${names[0]}</button>
+					<button class="navbar__title">${names[1]}</button>
+					<button class="navbar__title">${names[2]}</button>
+					<button class="navbar__title">${names[3]}</button>
+					<button class="navbar__title">${names[4]}</button>
+					
+				`
+				getStream(names, 0)	
+
+				const elements = document.querySelectorAll("button")
+				for (let i = 0; i < elements.length; i++) {
+					elements[i].addEventListener("click", function () {
+						getStream(names, i)	
+					})				
+				}				
+			} else {
+				alert("系統不穩定，請再試一次")
+			}
+		})
+
+		request.open("GET", url + "games/top?limit=5");
+		request.setRequestHeader('Accept', accept)
+    request.setRequestHeader('Client-ID', clientId)
+		request.send();
+
+		function getStream(names, i) {
+			const requerst = new XMLHttpRequest();
+			requerst.addEventListener("load", function () {	
+				if (request.status >= 200 && request.status < 400) {
+					var datas = JSON.parse(requerst.response)
+					document.querySelector(".main").innerHTML = `
+								<div class="stream"></div>
+					`
+					for (let j = 0; j < 20; j++) {				
+						const element = document.createElement("div");
+						element.innerHTML = `
+								<div class="stream__content">					
+									<img src="${datas.streams[j].preview.large}" alt="" class="stream__img">
+									<div class="stream__info">
+										<img src="${datas.streams[j].channel.logo}" alt=""  class="stream__logo">								
+										<div class="stream__name">${datas.streams[j].channel.name}</div>
+									</div>			
+								</div>	
+							`											
+						document.querySelector(".stream").appendChild(element)
+					}				
+				}	else {
+					alert("系統不穩定，請再試一次")
+				}
+			})
+
+			requerst.open("GET", url + "streams?game=" + encodeURIComponent(names[i]));
+			requerst.setRequestHeader('Accept', accept)
+			requerst.setRequestHeader('Client-ID', clientId)
+			requerst.send();				
+		}
+
+		
+
+	</script>
+</body>
+</html>
