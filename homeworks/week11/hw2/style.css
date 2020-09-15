@@ -1,0 +1,140 @@
+* {
+	font-family: 微軟正黑體;
+}
+
+body {
+	background-color: #bdbdbd;
+}
+
+.navbar {
+	background-color: #fafafa;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	box-shadow: 3px 3px 3px black;
+}
+
+.navbar__title {
+	font-size: 60px;
+	font-weight: bolder;
+	cursor: pointer;
+}
+
+.navbar__login {
+	height: 50px;
+	width: 100px;
+	border-radius: 5px;
+	border: 1px #999 solid;
+	background-color: white;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.navbar__login:hover {
+	background-color: black;
+	color: white;
+}
+
+.content {
+	background-color: #fafafa;
+	box-shadow: 3px 3px 3px black;
+	margin: 40px auto;
+	border: 1px solid black;
+	border-radius: 10px;
+	max-width: 1000px;
+	height: auto;
+	padding: 24px;
+	overflow: hidden;
+}
+
+.content:hover {
+	
+}
+
+.flex {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.content__title {
+	justify-content: center;
+	padding: 4px;
+	width: 40%;
+	font-size: 36px;
+	font-weight: bolder;
+	overflow: hidden;
+}
+
+.content__date {
+	font-size: 20px;
+	margin: 12px 0;
+}
+
+.handle__btn {
+	background-color: white;
+	width: 60px;
+	height: 32px;
+	border: 1px solid gray;
+	border-radius: 3px;
+	margin: 5px;
+}
+
+.handle__btn:hover {
+	background-color: black;
+	color: white;
+}
+
+.content__info {
+	font-size: 24px;
+	font-weight: bold;
+	white-space: pre-line;
+	background-color: #fafafa;
+}
+
+.content__login {
+	background-color: white;
+	box-shadow: 3px 3px 3px black;
+	margin: 40px auto;
+	border: 1px solid black;
+	border-radius: 10px;	
+	width: 400px;
+	height: auto;
+	text-align: center;
+}
+
+label {
+	font-weight: bold;
+	font-size: 20px;
+}
+
+input {
+	margin: 24px 12px;
+	height: 1.5em;
+}
+
+.login__btn {
+	margin: 20px 0;
+	width: 200px;
+	height: 50px;
+	border-radius: 10px;
+	border: 1px #999 solid;
+	background-color: white;
+	font-size: 24px;
+	font-weight: bold;	
+}
+
+.login__btn:hover {
+	background-color: black;
+	color: white;
+}
+
+textarea {
+	width: 100%;
+	border-radius: 10px;
+}
+
+.error {
+	color: red;
+	font-size: 20px;
+}
