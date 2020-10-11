@@ -8,7 +8,7 @@
     $username = $_SESSION['username'];
   }
 
-  $result = $conn->query("select * from YAO_comments order by id desc");
+  $result = $conn->query("select * from yao_comments order by id desc");
   if (!$result) {
     die('Error:' . $conn->error);
   }  
@@ -48,7 +48,7 @@
 					<form method="POST" action="add_comments.php">
 						<h2>帳號:	<?php echo $username ?></h2>
 						<?php
-							$results = $conn->query("select * from YAO_users order by id desc");
+							$results = $conn->query("select * from yao_users order by id desc");
 							$rows = $results->fetch_assoc()
 						?>
 						<h2>暱稱:	<?php echo $rows["nickname"] ?></h2>

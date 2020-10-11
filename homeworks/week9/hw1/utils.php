@@ -11,7 +11,7 @@
   function getUserFromUsername($username) {
     global $conn;
     $sql = sprintf(
-      "select * from YAO_users where username = '%s'",
+      "select * from yao_users where username = '%s'",
       $username
     );
     $result = $conn->query($sql);

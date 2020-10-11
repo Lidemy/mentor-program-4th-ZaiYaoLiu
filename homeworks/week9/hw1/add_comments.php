@@ -12,7 +12,7 @@
   $nickname = $user['nickname'];
   $content = $_POST['content'];
   $sql = sprintf(
-    "insert into YAO_comments(nickname, content) values('%s', '%s')",
+    "insert into yao_comments(nickname, content) values('%s', '%s')",
     $nickname,
     $content
   );

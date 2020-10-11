@@ -15,7 +15,7 @@
   $password = $_POST['password'];
 
   $sql = sprintf(
-    "insert into YAO_users(nickname, username, password) values('%s', '%s', '%s')",
+    "insert into yao_users(nickname, username, password) values('%s', '%s', '%s')",
     $nickname,
     $username,
     $password
