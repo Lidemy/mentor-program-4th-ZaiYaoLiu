@@ -1,4 +1,5 @@
 <?php
+  session_start();
   require_once('conn.php');
 
   if (
@@ -12,15 +13,12 @@
 
   $nickname = $_POST['nickname'];
   $username = $_POST['username'];
-  $password = $_POST['password'];
+  $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-  $sql = sprintf(
-    "insert into yao_users(nickname, username, password) values('%s', '%s', '%s')",
-    $nickname,
-    $username,
-    $password
-  );
-  $result = $conn->query($sql);
+  $sql = "insert into yao_users(nickname, username, password) values(?, ?, ?)";
+  $stmt = $conn->prepare($sql);
+  $stmt->bind_param('sss', $nickname, $username, $password);
+  $result = $stmt->execute();
   if (!$result) {
     $code = $conn->errno;
     if ($code === 1062) {
@@ -28,6 +26,6 @@
     }
     die($conn->error);
   }
-
+  $_SESSION['username'] = $username;
   header("Location: index.php");
 ?>

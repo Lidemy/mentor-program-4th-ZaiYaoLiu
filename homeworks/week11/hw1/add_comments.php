@@ -8,15 +8,12 @@
     die('資料不齊全');
   }
         
-  $user = getUserFromUsername($_SESSION['username']);
-  $nickname = $user['nickname'];
+  $username = $_SESSION['username'];  
   $content = $_POST['content'];
-  $sql = sprintf(
-    "insert into yao_comments(nickname, content) values('%s', '%s')",
-    $nickname,
-    $content
-  );
-  $result = $conn->query($sql);
+  $sql = "insert into yao_comments(username, content) values(?, ?)";
+  $stmt = $conn->prepare($sql);
+  $stmt->bind_param('ss', $username, $content);
+  $result = $stmt->execute();
   if (!$result) {
     die($conn->error);
   }

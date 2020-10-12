@@ -2,7 +2,7 @@
   session_start();
   require_once('conn.php');
   require_once('utils.php');
-
+  
   if (
     empty($_POST['username']) ||
     empty($_POST['password']) 
@@ -14,17 +14,23 @@
   $username = $_POST['username'];
   $password = $_POST['password'];
 
-  $sql = sprintf(
-    "select * from yao_users where username='%s' and password='%s'",
-    $username,
-    $password
-  );
-  $result = $conn->query($sql);
+  $sql = "select * from yao_users where username=?";
+  $stmt = $conn->prepare($sql);
+  $stmt->bind_param('s', $username);
+  $result = $stmt->execute();
   if (!$result) {
     die($conn->error);
   }
 
-  if ($result->num_rows) {
+  $result = $stmt->get_result();
+
+  if ($result->num_rows === 0) {
+    header("Location: login.php?errCode=2");
+    exit();
+  }
+  
+  $row = $result->fetch_assoc();
+  if (password_verify($password, $row['password'])) {
     $_SESSION['username'] = $username;
     header("Location: index.php");    
   } else {
