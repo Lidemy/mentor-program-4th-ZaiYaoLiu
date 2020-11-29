@@ -1,0 +1,128 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+input[type] {
+  margin: 20px;
+  border-radius: 5px;
+}
+
+textarea {
+  border: 5px ridge #000;
+}
+
+.note {
+  color: red;
+  background-color: yellow;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.comments {
+  background-color: #fff;
+  max-width: 650px;
+  margin: 24px auto;
+  padding: 20px;
+  box-shadow: 2px 2px 2px #87ceeb;
+  border: 1px solid #fff;
+  border-radius: 5px;
+}
+.comments__title {
+  display: flex;
+  justify-content: space-around;
+}
+.comments__input {
+  text-align: center;
+}
+.comments__card {
+  display: flex;
+  border: 1px solid #000;
+  border-radius: 5px;
+  margin: 4px;
+  padding: 4px;
+}
+
+.content {
+  width: 100%;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  margin: 4px;
+  padding: 4px;
+}
+
+.btn {
+  width: 200px;
+  height: 40px;
+  background-color: #fff;
+  font-weight: bold;
+  border: 1px solid #000;
+  border-radius: 5px;
+  margin: 4px;
+  padding: 4px;
+}
+.btn:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.card__avatar {
+  margin: 20px;
+  height: 40px;
+  min-width: 40px;
+  border-radius: 50%;
+  background-color: #87ceeb;
+}
+.card__info {
+  display: flex;
+  align-items: center;
+}
+.card__name {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 4px;
+  padding: 4px;
+}
+.card__time {
+  font-size: 12px;
+  color: #000;
+}
+.card__contents {
+  word-break: break-word;
+  white-space: pre-line;
+  overflow: auto;
+}
+
+.hide {
+  display: none;
+}
+
+.page-info {
+  text-align: center;
+}
+
+.paginator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+.paginator a {
+  text-decoration: none;
+  color: #87ceeb;
+  border: 1px solid #87ceeb;
+  border-radius: 5px;
+  margin: 4px;
+  padding: 4px;
+}
+
+.name {
+  font-size: 20px;
+  margin-right: 20px;
+}
+
+/*# sourceMappingURL=style.css.map */

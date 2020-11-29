@@ -1,0 +1,144 @@
+$color__skyblue:  #87ceeb;
+$color__black: #000;
+$color__white: #fff;
+$size__20: 20px;
+
+@mixin mar_pad() {
+    margin: 4px;
+    padding: 4px;
+}
+
+@mixin border($color) {
+    border: 1px solid $color;
+    border-radius: 5px;
+}
+
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+input[type] {
+	margin: $size__20;
+	border-radius: $size__20 / 4;
+}
+
+textarea {
+	border: $size__20 / 4 ridge $color__black;
+
+}
+
+.note {
+	color: red;
+	background-color: yellow;
+	text-align: center;
+	padding: $size__20 / 2;
+	font-weight: bold; 
+}
+
+.comments {
+	background-color: $color__white;
+	max-width: 650px;
+	margin: 24px auto;
+	padding: $size__20;
+    box-shadow: 2px 2px 2px $color__skyblue;
+    @include border($color__white);
+    
+    &__title {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    &__input {
+        text-align: center;
+    }
+
+    &__card {
+        display: flex;
+        @include border($color__black);
+        @include mar_pad();
+    }
+}
+
+.content {
+	width: 100%;
+	@include border($color__white);
+    @include mar_pad();
+}
+
+.btn {
+	width: 200px;
+	height: $size__20 * 2;
+	background-color: $color__white;
+	font-weight: bold;
+    @include border($color__black);
+    @include mar_pad();
+    
+    &:hover {
+        background-color: $color__black;
+        color: $color__white;
+    }
+}
+
+.card {
+    &__avatar {
+        margin: $size__20;
+        height: $size__20 * 2;
+        min-width: $size__20 * 2;
+        border-radius: 50%;
+        background-color: $color__skyblue;
+    }
+
+    &__info {
+        display: flex;
+        align-items: center;
+    }
+
+    &__name {
+        font-size: $size__20;
+        font-weight: bold;
+        @include mar_pad();
+    }
+
+    &__time {
+        font-size: 12px;
+        color: $color__black;
+    }
+
+    &__contents {
+        word-break: break-word;
+        white-space: pre-line;
+        overflow: auto;
+    }
+}
+
+.hide {
+	display: none;
+}
+
+.page-info {
+  text-align: center;
+}
+
+.paginator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: $size__20 / 2;
+
+  a {
+    text-decoration: none;
+    color: $color__skyblue;
+    @include border($color__skyblue);
+    @include mar_pad();
+  }
+}
+
+.name {
+	font-size: $size__20;
+	margin-right: $size__20;
+}
